@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp">
+
+    <RelativeLayout
+        android:id="@+id/tripsPlanner_list_item"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:background="#E3E3E3" >
+
+        <RelativeLayout
+            android:id="@+id/trips_planner_listItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/text_plan_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="San Jose,CA"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@+id/text_plan_from"
+                android:src="@drawable/black_carrot_12x12" />
+
+            <TextView
+                android:id="@+id/text_plan_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:text="Fremont,CA"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+<!--         <ImageView -->
+<!--             android:id="@+id/image_edit_plan" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_alignParentRight="true" -->
+<!--             android:layout_marginRight="19dp" -->
+<!--             android:layout_marginTop="5dp" -->
+<!--             android:src="@drawable/ic_action_edit"/> -->
+
+        <RelativeLayout
+            android:id="@+id/rl_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/trips_planner_listItem"
+            android:layout_marginTop="7dp" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/small_person_18x18" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/imageView3"
+                android:src="@drawable/blue_carrot_12x12" />
+
+            <TextView
+                android:id="@+id/text_routeno_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imageView4"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/imageView5"
+                android:gravity="center"
+                android:text="L-10"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/text_routeno_plan"
+                android:src="@drawable/blue_carrot_12x12" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/imageView6"
+                android:src="@drawable/small_person_18x18" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView4"
+                android:src="@drawable/bus_circle_32x32" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rl_2" >
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/calendar_black_24x24" />
+
+            <TextView
+                android:id="@+id/text_plan_timings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="12:45 pm - 1:25 pm (1h 10mins) "
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textView_plan_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/imageView8"
+                android:text="06/27/13"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textView_plan_fare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/imageView9"
+                android:paddingLeft="5dp"
+                android:text="13.00"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="10dp"
+                android:src="@drawable/ic_rupee" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/image_remove_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/relativeLayout1"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/ic_action_discard" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

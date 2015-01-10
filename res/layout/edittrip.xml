@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3E3E3"
+    android:orientation="vertical" >
+ <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+           
+    <LinearLayout
+        android:id="@+id/ll_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/text_from"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="From"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/edit_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:layout_marginRight="10dp"
+            android:ems="10" >
+        </EditText>
+
+    </LinearLayout>
+    
+     <LinearLayout
+        android:id="@+id/ll_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_to"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="To"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+       <EditText
+            android:id="@+id/edit_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:layout_marginRight="10dp"
+            android:ems="10" >
+        </EditText>
+
+    </LinearLayout>
+    
+      <LinearLayout
+        android:id="@+id/ll_bus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_bus"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="Route No"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/edit_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:layout_marginRight="10dp"
+            android:ems="10" >
+        </EditText>
+
+    </LinearLayout>
+    
+       <LinearLayout
+        android:id="@+id/ll_depart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_depart"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="Timings"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:ems="10"
+            android:layout_marginRight="10dp"
+            android:inputType="time" />
+    </LinearLayout>
+    
+        <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="Date"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+		 <EditText
+		     android:id="@+id/editText2"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_marginRight="10dp"
+		     android:layout_weight="0.78"
+		     android:ems="10"
+		     android:inputType="date" >
+
+        </EditText>
+    </LinearLayout>
+
+       
+    
+         <LinearLayout
+        android:id="@+id/ll_qty"    
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_qty"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:text="Qty"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/edit_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:inputType="numberSigned" 
+            android:layout_marginRight="10dp"
+            android:hint="2"
+            android:ems="10" >
+        </EditText>
+
+    </LinearLayout>
+
+         <LinearLayout
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" >
+
+         <TextView
+            android:id="@+id/text_total"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"  />
+
+             <ImageView
+                 android:id="@+id/imageView1"
+                 android:layout_width="20dp"
+                 android:layout_height="20dp"
+                 android:src="@drawable/fare_36x36" />
+
+             <TextView
+                 android:id="@+id/textView2"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content"
+                 android:text="26.00 "
+                 android:gravity="center"
+                 android:textAppearance="?android:attr/textAppearanceSmall" />
+
+             <TextView
+                 android:id="@+id/textView3"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="(each 13.00)"
+                 android:textAppearance="?android:attr/textAppearanceSmall" />
+
+         </LinearLayout>
+
+         <RelativeLayout
+	        android:layout_width="320dp"
+	        android:layout_height="50dp"
+	        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/edt_btn_edit"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/blue_color_btn"
+            android:text="Edit Trip"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edt_btn_cancel"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="22dp"
+            android:layout_toLeftOf="@+id/edt_btn_edit"
+            android:background="@drawable/blue_color_btn"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+ </LinearLayout>
+        </ScrollView>
+</LinearLayout>
+

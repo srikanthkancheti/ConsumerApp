@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_from"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="From"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_to"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="To"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_bus"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="Route No"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_routeNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_depart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_depart"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="Timings"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_timings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10"
+            android:inputType="time" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="Date"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10"
+            android:inputType="date" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_qty"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:gravity="center"
+            android:text="Qty"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/add_edit_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.78"
+            android:ems="10"
+            android:inputType="numberSigned" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/text_total"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Total"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/fare_36x36" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="26.00 "
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(each 13.00)"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/add_btn_add"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/blue_color_btn"
+            android:text="Add Trip"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/add_btn_cancel"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="17dp"
+            android:layout_toLeftOf="@+id/add_btn_add"
+            android:background="@drawable/blue_color_btn"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>

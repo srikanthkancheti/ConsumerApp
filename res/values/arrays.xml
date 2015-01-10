@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <string-array name="settings">
+        <item>My Profile</item>
+        <item>My Favorites</item>
+        <item>Purchase History</item>
+        <item>Settings</item>
+        <item>History</item>
+        
+    </string-array>
+</resources>

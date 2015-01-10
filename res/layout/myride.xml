@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E3E3E3" >
+    <ScrollView 
+        android:id="@+id/findMyRide_scroll"
+        android:layout_height="200dp"
+        android:layout_width="wrap_content">
+    <RelativeLayout 
+        android:layout_height="190dp"
+        android:layout_width="fill_parent"
+        android:id="@+id/rl_findMyRide">
+
+   <LinearLayout
+        android:id="@+id/ll_from_ride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="From"
+            android:layout_weight="0.2"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <AutoCompleteTextView
+        android:id="@+id/autoComplete1"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/mapButton"
+        android:layout_below="@+id/textView1"
+         >
+
+        <requestFocus>
+        </requestFocus>
+    </AutoCompleteTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_to_ride"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ll_from_ride"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="To"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+       <AutoCompleteTextView
+        android:id="@+id/autoComplete2"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/mapButton"
+        android:layout_below="@+id/textView1"
+         >
+    </AutoCompleteTextView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_findmyride"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/ll_to_ride"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/blue_color_btn"
+        android:text="Find My Ride"
+        android:textColor="@android:color/white"
+        android:textSize="14dp" />
+    
+    </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="@+id/findMyRide_scroll"
+        android:layout_below="@+id/findMyRide_scroll"
+        android:paddingTop="5dp"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/common_signin_btn_light_text_disabled"       
+        android:text="  Select a Trip" />
+
+    <ExpandableListView
+        android:id="@+id/exp_list"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+</ExpandableListView>
+</LinearLayout>
+
+
+   <FrameLayout
+        android:id="@+id/map_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_listview" >
+
+       <fragment
+           android:id="@+id/map_fragment"
+           android:layout_width="match_parent"
+           android:layout_height="190dp"
+           class="com.google.android.gms.maps.SupportMapFragment" />
+
+    </FrameLayout>
+ 
+</RelativeLayout>

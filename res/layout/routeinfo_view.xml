@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+    android:id="@+id/linear_routeinfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/relative_source"
+        android:layout_width="match_parent"
+        android:layout_height="87dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/source" />
+
+        <TextView
+            android:id="@+id/info_source_walk_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/info_source_walk"
+            android:layout_alignBottom="@+id/info_source_walk"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="11dp"
+            android:text="4 mins" />
+
+        <TextView
+            android:id="@+id/info_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:text="SanJose,CA"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/info_source"
+            android:layout_alignTop="@+id/info_source_walk"
+            android:src="@drawable/small_person_18x18" />
+
+        <TextView
+            android:id="@+id/info_source_walk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView3"
+            android:text="Walk to 1st St.James"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/dotimage_icon" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_middle1"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_alignBottom="@+id/relative_source">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/round_imageicon" />
+         <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_below="@+id/imageView4"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/blue_color_btn" />
+
+        <TextView
+            android:id="@+id/info_busstop1_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/info_busstop1_text"
+            android:layout_alignBottom="@+id/info_busstop1_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="11dp"
+            android:text="35 mins" />
+
+        <TextView
+            android:id="@+id/info_busstop1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView4"
+            android:text="1st at St James"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        
+
+        <TextView
+            android:id="@+id/info_busstop1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info_busstop1"
+            android:layout_toLeftOf="@+id/info_busstop1_time"
+            android:layout_toRightOf="@+id/imageView6"
+            android:text="L-10 towards L-10 NB Express Express Fremont Bort"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/info_busstop1"
+            android:layout_alignTop="@+id/info_busstop1_text"
+            android:src="@drawable/bus_16x16" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_middle2"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_alignBottom="@+id/relative_middle1">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/round_imageicon" />
+         <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/imageView7"
+            android:layout_below="@+id/imageView7"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/dotimage_icon" />
+
+        <TextView
+            android:id="@+id/info_busstop2_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/info_busstop2_text"
+            android:layout_alignBottom="@+id/info_busstop2_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="11dp"
+            android:text="2 mins" />
+
+        <TextView
+            android:id="@+id/info_busstop2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView7"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView7"
+            android:text="Fremont Bart Station"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        
+
+        <TextView
+            android:id="@+id/info_busstop2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info_busstop2"
+            android:layout_toLeftOf="@+id/textView3"
+            android:layout_toRightOf="@+id/imageView9"
+            android:text="Walk to Fremont,CA"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/info_busstop2"
+            android:layout_alignTop="@+id/info_busstop2_text"
+            android:src="@drawable/small_person_18x18" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_departure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/relative_middle1">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/destination" />
+
+       
+
+        <TextView
+            android:id="@+id/text_info_destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView10"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView10"
+            android:text="Fremont Bart Station"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>
