@@ -56,7 +56,7 @@ public class RoutesFragment extends Fragment {
 		
 		getAllRoutes();
 		
-		routesAdapter = new RoutesListAdapter(getActivity(), Utilities.routesAdapter);
+		routesAdapter = new RoutesListAdapter(getActivity(), Utilities.routesList);
 		
 		return rootView;
 	}
@@ -115,7 +115,7 @@ public class RoutesFragment extends Fragment {
 					InputStream is = new ByteArrayInputStream(result.getBytes());
 					//new WebServiceParsers(is);
 					HandleAllRoutesXML parseRoutes = new HandleAllRoutesXML();
-					Utilities.routesAdapter = parseRoutes.parseRoutesXML(is);
+					Utilities.routesList = parseRoutes.parseRoutesXML(is);
 					routes_lv.setAdapter(routesAdapter);
 		
 					}
@@ -140,19 +140,19 @@ public class RoutesFragment extends Fragment {
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Utilities.routesAdapter.size();
+			return Utilities.routesList.size();
 		}
 
 		@Override
 		public Object getItem(int position) {
 			// TODO Auto-generated method stub
-			return Utilities.routesAdapter.get(position);
+			return Utilities.routesList.get(position);
 		}
 
 		@Override
 		public long getItemId(int position) {
 			// TODO Auto-generated method stub
-			return Utilities.routesAdapter.indexOf(getItem(position));
+			return Utilities.routesList.indexOf(getItem(position));
 		}
 
 		@Override
@@ -176,16 +176,16 @@ public class RoutesFragment extends Fragment {
 		        }
 		         
 		         
-		        holder.route_num_tv.setText(Utilities.routesAdapter.get(position).getRouteNo());
-		        holder.source_tv.setText(Utilities.routesAdapter.get(position).getSourceName());
-		        holder.destination_tv.setText(Utilities.routesAdapter.get(position).getDestinationName());
+		        holder.route_num_tv.setText(Utilities.routesList.get(position).getRouteNo());
+		        holder.source_tv.setText(Utilities.routesList.get(position).getSourceName());
+		        holder.destination_tv.setText(Utilities.routesList.get(position).getDestinationName());
 		        
 		        holder.route_item_rl.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						String routeNumber = Utilities.routesAdapter.get(position).getRouteNo();
+						String routeNumber = Utilities.routesList.get(position).getRouteNo();
 						Intent mapIntent = new Intent(getActivity(), RouteMapActivity.class).putExtra("route_no", routeNumber);
 						startActivity(mapIntent);
 					}

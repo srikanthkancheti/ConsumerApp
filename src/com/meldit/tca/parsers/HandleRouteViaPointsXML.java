@@ -11,23 +11,23 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.meldit.tca.Utilities;
 
 public class HandleRouteViaPointsXML {
 	
 		private RouteViaPointsModel routeVia;
 		private XmlPullParserFactory xmlFactoryObject;
 		public volatile boolean parsingComplete = true;
-		public ArrayList<RouteViaPointsModel> routeViaPoints;
 		private String text;
 		private LatLng viaLatitudeLongitude;
 		
 		public HandleRouteViaPointsXML() {
 			// TODO Auto-generated constructor stub
-			routeViaPoints = new ArrayList<RouteViaPointsModel>();
+			Utilities.routeViaPoints = new ArrayList<RouteViaPointsModel>();
 		}
 
 		public List<RouteViaPointsModel> getRouteViaPoints() {
-	        return routeViaPoints;
+	        return Utilities.routeViaPoints;
 	    }
 
 
@@ -46,7 +46,7 @@ public class HandleRouteViaPointsXML {
             String tagname = myparser.getName();
             switch (eventType) {
             case XmlPullParser.START_TAG:
-                if (tagname.equalsIgnoreCase("ViaNames")) {
+                if (tagname.equalsIgnoreCase("Route")) {
                     // create a new instance of employee
                 	routeVia = new RouteViaPointsModel();
                 }
@@ -57,9 +57,9 @@ public class HandleRouteViaPointsXML {
                 break;
 
             case XmlPullParser.END_TAG:
-                if (tagname.equalsIgnoreCase("ViaNames")) {
+                if (tagname.equalsIgnoreCase("Route")) {
                     // add employee object to list
-                	routeViaPoints.add(routeVia);
+                	Utilities.routeViaPoints.add(routeVia);
                 } else if (tagname.equalsIgnoreCase("vName")) {
                 	routeVia.setViaName(text);
                 } else if (tagname.equalsIgnoreCase("vNameId")) {
@@ -86,7 +86,7 @@ public class HandleRouteViaPointsXML {
     } catch (IOException e) {
         e.printStackTrace();
     }
-		return routeViaPoints;
+		return Utilities.routeViaPoints;
 	}
 
 	

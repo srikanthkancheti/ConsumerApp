@@ -9,22 +9,23 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import com.meldit.tca.Utilities;
+
 public class HandleAvaliableServicesXML {
 	
 	XmlPullParserFactory xmlFactoryObject;
 	public volatile boolean parsingComplete = true;
-	ArrayList<ServiceModel> services;
 	private ServiceModel service;
 	private String text, arrival_time, departure_time;
 
 	
 	public HandleAvaliableServicesXML() {
 		// TODO Auto-generated constructor stub
-		services = new ArrayList<ServiceModel>();
+		Utilities.servicesList = new ArrayList<ServiceModel>();
 	}
 
 	public List<ServiceModel> getEmployees() {
-        return services;
+        return Utilities.servicesList;
     }
 
 	public ArrayList<ServiceModel> parseXML(InputStream is) {
@@ -55,7 +56,7 @@ public class HandleAvaliableServicesXML {
             case XmlPullParser.END_TAG:
                 if (tagname.equalsIgnoreCase("service")) {
                     // add employee object to list
-                	services.add(service);
+                	Utilities.servicesList.add(service);
                 } else if (tagname.equalsIgnoreCase("serviceName")) {
                 	service.setServiceName(text);
                 } else if (tagname.equalsIgnoreCase("serviceNO")) {
@@ -84,7 +85,7 @@ public class HandleAvaliableServicesXML {
         e.printStackTrace();
     }
 
-    return services;
+    return Utilities.servicesList;
 }
 	
 

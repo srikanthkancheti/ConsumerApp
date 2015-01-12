@@ -86,8 +86,8 @@ public class RouteMapActivity extends FragmentActivity implements LocationListen
 		
 		Intent intent = getIntent();
 		routeNo = intent.getStringExtra("route_no");
-		routeViaPointsAdapter = new RoutesViaPointsAdapter(RouteMapActivity.this, Utilities.routeViaPoints);
 		getListViewData();
+		routeViaPointsAdapter = new RoutesViaPointsAdapter(RouteMapActivity.this, Utilities.routeViaPoints);
 		
 		//actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#110000ff")));
 		//actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#330000ff")));
@@ -255,6 +255,7 @@ public class RouteMapActivity extends FragmentActivity implements LocationListen
 					HandleRouteViaPointsXML parseRouteVia = new HandleRouteViaPointsXML();
 					Utilities.routeViaPoints = parseRouteVia.parseRouteViaXML(is);
 					route_via_lv.setAdapter(routeViaPointsAdapter);
+					Log.i(" Routes via points ArrayList values","==================="+Utilities.routeViaPoints);
 		
 					}
 			  }else{

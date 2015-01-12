@@ -9,21 +9,22 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import com.meldit.tca.Utilities;
+
 public class HandleAllRoutesXML {
 	
 	private XmlPullParserFactory xmlFactoryObject;
 	public volatile boolean parsingComplete = true;
-	public ArrayList<RoutesModel> routes;
 	private RoutesModel route;
 	private String text;
 	
 	public HandleAllRoutesXML() {
 		// TODO Auto-generated constructor stub
-		routes = new ArrayList<RoutesModel>();
+		Utilities.routesList = new ArrayList<RoutesModel>();
 	}
 
 	public List<RoutesModel> getRoutes() {
-        return routes;
+        return Utilities.routesList;
     }
 	
 	public ArrayList<RoutesModel> parseRoutesXML(InputStream is) {
@@ -54,7 +55,7 @@ public class HandleAllRoutesXML {
             case XmlPullParser.END_TAG:
                 if (tagname.equalsIgnoreCase("Route")) {
                     // add employee object to list
-                	routes.add(route);
+                	Utilities.routesList.add(route);
                 } else if (tagname.equalsIgnoreCase("routeNo")) {
                 	route.setRouteNo(text);
                 } else if (tagname.equalsIgnoreCase("sourceName")) {
@@ -77,7 +78,7 @@ public class HandleAllRoutesXML {
         e.printStackTrace();
     }
 
-    return routes;
+    return Utilities.routesList;
 }
 	
 	public class RoutesModel {

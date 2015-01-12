@@ -4,10 +4,24 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Window;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.InflateException;
+import android.view.LayoutInflater;
+import android.view.LayoutInflater.Factory;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class MyAccount extends FragmentActivity implements ActionBar.TabListener {
 
@@ -101,5 +115,88 @@ public class MyAccount extends FragmentActivity implements ActionBar.TabListener
 		// TODO Auto-generated method stub
 		return context;
 	}
+	
+
+			@Override
+			public boolean onCreateOptionsMenu(Menu menu) {
+			    MenuInflater inflater = getMenuInflater();
+			    inflater.inflate(R.menu.main, menu);
+			   
+			   // setMenuBackground();
+			    return true;
+			}
+			
+			
+			
+			 @Override
+			  public boolean onOptionsItemSelected(MenuItem item) {
+				 Log.i("onOptions","========================item"+item.getItemId());
+				 
+			    switch (item.getItemId()) {
+			    case R.id.item1:
+			     Intent myProfileIntent = new Intent(MyAccount.this, ProfileActivity.class);
+			     startActivity(myProfileIntent);
+			      break;
+			    case R.id.item2:
+			    	Toast.makeText(getApplicationContext(),"Favorites List",Toast.LENGTH_SHORT).show();
+			    	//tabHost.setCurrentTab(2);
+				      break;
+			    case R.id.item3:
+				    // tabHost.setCurrentTab(3);
+				      break;
+			    case R.id.item4:
+				     Intent settingsIntent = new Intent(MyAccount.this, SettingsActivity.class);
+				     startActivity(settingsIntent);
+				      break;
+			    case R.id.item5:
+			    	SharedPreferences sharedpreferences = getSharedPreferences
+				      (LogInActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+				      Editor editor = sharedpreferences.edit();
+				      editor.clear();
+				      editor.commit();
+				      moveTaskToBack(true); 
+				      MyAccount.this.finish();
+				      System.exit(0);
+				      break;
+			    default:
+			    	 
+			      break;
+			    }
+			    return true;
+			  }
+			
+			 
+			 protected void setMenuBackground(){                     
+			        // Log.d(TAG, "Enterting setMenuBackGround");  
+			        getLayoutInflater().setFactory( new Factory() {  
+			            public View onCreateView(String name, Context context, AttributeSet attrs) {
+			                if ( name.equalsIgnoreCase( "com.android.internal.view.menu.IconMenuItemView" ) ) {
+			                    try { // Ask our inflater to create the view  
+			                        LayoutInflater f = getLayoutInflater();  
+			                        final View view = f.createView( name, null, attrs );  
+			                        /* The background gets refreshed each time a new item is added the options menu.  
+			                        * So each time Android applies the default background we need to set our own  
+			                        * background. This is done using a thread giving the background change as runnable 
+			                        * object */
+			                        new Handler().post( new Runnable() {  
+			                            public void run () {  
+			                                // sets the background color   
+			                                view.setBackgroundResource(Color.parseColor("#FFA500"));
+			                                // sets the text color              
+			                               // ((TextView) view).setTextColor(Color.BLACK);
+			                                // sets the text size              
+			                               // ((TextView) view).setTextSize(18);
+			                }
+			                        } );  
+			                    return view;
+			                }
+			            catch ( InflateException e ) {}
+			            catch ( ClassNotFoundException e ) {}  
+			        } 
+			        return null;
+			    }}); 
+			 }
+			 
+			 
 	
 }

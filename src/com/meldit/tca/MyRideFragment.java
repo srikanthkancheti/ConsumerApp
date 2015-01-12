@@ -155,7 +155,7 @@ public class MyRideFragment extends Fragment implements LocationListener {
 	   
 	    ll_listview = (LinearLayout) rootView.findViewById(R.id.ll_listview);
 	    expListView = (ExpandableListView) rootView.findViewById(R.id.exp_list);
-		expListAdapter = new MyExpandableListAdapter(getActivity(), Utilities.servicesAdapter, Utilities.listDataChild);
+		expListAdapter = new MyExpandableListAdapter(getActivity(), Utilities.servicesList, Utilities.listDataChild);
         
 		ll_listview.setVisibility(View.INVISIBLE);
 		actionBar = getActivity().getActionBar();
@@ -479,7 +479,7 @@ public class MyRideFragment extends Fragment implements LocationListener {
 						InputStream is = new ByteArrayInputStream(result.getBytes());
 						//new WebServiceParsers(is);
 						HandleAvaliableServicesXML parseService = new HandleAvaliableServicesXML();
-						Utilities.servicesAdapter = parseService.parseXML(is);
+						Utilities.servicesList = parseService.parseXML(is);
 						
 						findmyride.setVisibility(View.VISIBLE);
 						ll_from_ride.setVisibility(View.VISIBLE);
@@ -854,13 +854,13 @@ public class MyRideFragment extends Fragment implements LocationListener {
 		@Override
 		public Object getGroup(int groupPosition) {
 			// TODO Auto-generated method stub
-			return Utilities.servicesAdapter.get(groupPosition);
+			return Utilities.servicesList.get(groupPosition);
 		}
 
 		@Override
 		public int getGroupCount() {
 			// TODO Auto-generated method stub
-			return Utilities.servicesAdapter.size();
+			return Utilities.servicesList.size();
 		}
 
 		@Override
@@ -882,8 +882,8 @@ public class MyRideFragment extends Fragment implements LocationListener {
 		        TextView headerRouteNo = (TextView) convertView.findViewById(R.id.route_no);
 		        TextView headerTimings = (TextView) convertView.findViewById(R.id.text_timings);
 		        //lblListHeader.setTypeface(null, Typeface.BOLD);
-		          headerRouteNo.setText(Utilities.servicesAdapter.get(groupPosition).getRoute_no());
-		          headerTimings.setText(Utilities.servicesAdapter.get(groupPosition).getTiminngs());
+		          headerRouteNo.setText(Utilities.servicesList.get(groupPosition).getRoute_no());
+		          headerTimings.setText(Utilities.servicesList.get(groupPosition).getTiminngs());
 		          
 		        ImageView plus = (ImageView) convertView.findViewById(R.id.image_popup);
 		        plus.setOnClickListener(new OnClickListener() {
@@ -929,7 +929,7 @@ public class MyRideFragment extends Fragment implements LocationListener {
 										
 									}
 									
-								Utilities.dbAdapter.storeTrips("INSERT INTO TripPlannerTable (source, destination, route_no, timinngs, date, fare) values('"+source[0]+"', '"+destination[0]+"','"+Utilities.servicesAdapter.get(groupPosition).getService_id()+"', '"+Utilities.servicesAdapter.get(groupPosition).getTiminngs()+"', '"+currentDateTime+"', '"+13.00+"')");
+								Utilities.dbAdapter.storeTrips("INSERT INTO TripPlannerTable (source, destination, route_no, timinngs, date, fare) values('"+source[0]+"', '"+destination[0]+"','"+Utilities.servicesList.get(groupPosition).getService_id()+"', '"+Utilities.servicesList.get(groupPosition).getTiminngs()+"', '"+currentDateTime+"', '"+13.00+"')");
 								popupWindow.dismiss();				
 							}
 							
